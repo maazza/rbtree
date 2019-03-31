@@ -44,9 +44,9 @@ class Node:
     def find(self, value):
         if self.value == value:
             return self
-        if self.left:
+        if self.left and value < self.value :
             return self.left.find(value)
-        if self.right:
+        if self.right and value > self.value:
             return self.right.find(value)
         raise Exception("Not Found")
 
